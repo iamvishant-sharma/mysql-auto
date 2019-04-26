@@ -1,0 +1,24 @@
+---
+- name: Create a new database with name '{{ db_name }}'
+  mysql_db:
+     login_user: "{{ login_user }}"
+     login_password: "{{ login_password }}"
+     login_host: "{{ item }}"
+     name: "{{ db_name }}"
+     state: present
+  with_items:
+     - noontest-t1.mysql.dubai.rds.aliyuncs.com
+
+- name: Create {{ username }} user for {{ db_name }} database
+  mysql_user:
+     login_user: "{{ login_user }}"
+     login_password: "{{ login_password }}"
+     login_host: "{{ item }}"
+     host: "%"
+     name: "{{ username }}"
+     password: "{{ password }}"
+     priv: '{{ db_name }}.*:{{ priv }}'
+     state: present
+  with_items:
+     - noontest-t1.mysql.dubai.rds.aliyuncs.com
+
