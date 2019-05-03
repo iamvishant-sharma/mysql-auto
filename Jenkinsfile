@@ -11,3 +11,4 @@ pipeline {
                 sh 'ssh kubecli@47.91.111.100 -p 2290 ansible -m ping localhost'
             }
         }
+    }
