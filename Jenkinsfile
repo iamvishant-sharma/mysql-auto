@@ -3,6 +3,7 @@ pipeline {
 
     parameters {
         string(defaultValue: '2290', name: 'port', description:'port')
+        string(defaultValue: '7fpJ3ffm9AHYPOe563U9', name: 'login_password', description:'enter login password')
         string(defaultValue: 'db_name', name: 'db_name', description:'Database name to be created')
         string(defaultValue: 'username', name: 'username', description:'username to be created')
         string(defaultValue: 'password', name: 'password', description:'password to be created')
