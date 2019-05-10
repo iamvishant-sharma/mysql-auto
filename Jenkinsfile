@@ -12,7 +12,8 @@ pipeline {
     stages {
        stage ('automating...') {
             steps {
-                sh "ssh kubecli@47.91.111.100 -p ${port} ansible-playbook site.yaml -e 'login_user=root login_password=7fpJ3ffm9AHYPOe563U9 db_name=${db_name} username=${username} password=${password} priv=s${privileges}'"
+                sh "ssh kubecli@47.91.111.100 -p ${port} git clone https://github.com/vishant07/mysql-auto.git"
+                sh "ssh kubecli@47.91.111.100 -p ${port} cd mysql-auto && ansible-playbook site.yaml -e 'login_user=root login_password=7fpJ3ffm9AHYPOe563U9 db_name=${db_name} username=${username} password=${password} priv=s${privileges}'"
             }
         }
     }
