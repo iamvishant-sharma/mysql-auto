@@ -20,5 +20,5 @@
      priv: '{{ db_name }}.*:{{ priv }}'
      state: present
   with_items:
-     - noontest-t1.mysql.dubai.rds.aliyuncs.com
+     - test-t1.mysql.dubai.rds.aliyuncs.com
 
