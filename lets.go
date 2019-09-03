@@ -7,7 +7,7 @@ import (
 )
 
 func execute(){
-	out, err := exec.Command("/bin/sh", "-c", "ansible-playbook site.yaml -e 'login_user=root login_password=7fpJ3ffm9AHYPOe563U9 db_name=diglet_ka_db username=diglet password=diglet priv=select,insert'").Output()
+	out, err := exec.Command("/bin/sh", "-c", "ansible-playbook site.yaml -e 'login_user=root login_password=#### db_name=diglet_ka_db username=diglet password=diglet priv=select,insert'").Output()
 	if err != nil {
 		fmt.Printf("%s", err)
 	}
