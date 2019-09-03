@@ -7,7 +7,7 @@
      name: "{{ db_name }}"
      state: present
   with_items:
-     - noontest-t1.mysql.dubai.rds.aliyuncs.com
+     - test-t1.mysql.dubai.rds.aliyuncs.com
 
 - name: Create {{ username }} user for {{ db_name }} database
   mysql_user:
